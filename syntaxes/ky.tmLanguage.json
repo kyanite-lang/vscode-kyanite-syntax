@@ -60,7 +60,7 @@
 			}]
 		},
 		{
-			"match": "\\b(?:(do)|(end)|(if)|(then)|(else)|(for)|(in)|(to)|(by)|(switch)|(typeswitch)|(case)|(default)|(return)|(break)|(on)|(as)|(invoke)|(event))\\b",
+			"match": "\\b(?:(do)|(end)|(if)|(then)|(else)|(for)|(in)|(to)|(by)|(switch)|(typeswitch)|(case)|(default)|(return)|(break)|(on)|(as)|(invoke)|(event)|(is))\\b",
 			"captures": {
 				"1": { "name": "keyword.control.do.ky" },
 				"2": { "name": "keyword.control.end.ky" },
@@ -80,7 +80,8 @@
 				"16": { "name": "keyword.control.on.ky" },
 				"17": { "name": "keyword.control.as.ky" },
 				"18": { "name": "keyword.control.invoke.ky" },
-				"19": { "name": "keyword.control.event.ky" }
+				"19": { "name": "keyword.control.event.ky" },
+				"20": { "name": "keyword.control.is.ky" }
 			}
 		},
 		{
