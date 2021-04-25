@@ -1,0 +1,25 @@
+{
+    "name": "vscode-kyanite-syntax",
+    "displayName": "Kyanite Syntax Highlighting",
+    "description": "Adds Kyanite syntax support.",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.55.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "ky",
+            "aliases": ["Kyanite", "kyanite", "ky"],
+            "extensions": [".ky"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "ky",
+            "scopeName": "source.ky",
+            "path": "./syntaxes/ky.tmLanguage.json"
+        }]
+    }
+}

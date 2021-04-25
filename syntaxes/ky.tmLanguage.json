@@ -1,0 +1,125 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Kyanite",
+	"patterns": [
+		{
+			"name": "string.quoted.double.ky",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [{
+				"match": "\\\\.",
+				"name": "constant.character.escape.ky"
+			}]
+		},
+		{
+			"name": "meta.function-call.ky",
+			"begin": "\\b([a-zA-Z][a-zA-Z0-9_]*\\??)\\(",
+			"beginCaptures": {
+				"1": { "name": "entity.name.function" }
+			},
+			"end": "\\)",
+			"patterns": [{
+				"include": "source.ky"
+			}]
+		},
+		{
+			"name": "meta.function.ky",
+			"begin": "\\b(function)\\s+(?:([a-zA-Z][a-zA-Z0-9_]*\\??)(?:\\.|:))?([a-zA-Z][a-zA-Z0-9_]*\\??)\\s*(\\()",
+			"captures": {
+				"1": { "name": "keyword.control.function.ky" },
+				"2": { "name": "entity.name.class.ky" },
+				"3": { "name": "entity.name.function.ky" },
+				"4": { "name": "punctuation.definition.parameters.ky" }
+			},
+			"end": "\\)",
+			"endCaptures": {
+				"0": { "name": "punctuation.definition.parameters.ky" }
+			},
+			"patterns": [
+				{
+					"match": "\\b[a-zA-Z][a-zA-Z0-9_]*\\??\\b",
+					"name": "variable.parameter"
+				}
+			]
+		},
+		{
+			"name": "meta.class.ky",
+			"begin": "\\b(object)\\s+([a-zA-Z][a-zA-Z0-9_]*\\??)\\s+({)",
+			"beginCaptures": {
+				"1": { "name": "keyword.control.object.ky" },
+				"2": { "name": "entity.name.class.ky" },
+				"3": { "name": "punctuation.definition.variables.ky" }
+			},
+			"end": "(})",
+			"endCaptures": {
+				"0": { "name": "punctuation.definition.variables.ky" }
+			},
+			"patterns": [{
+				"match": "\\b([a-zA-Z][a-zA-Z0-9_]*\\??)\\b",
+				"name": "variable.parameter"
+			}]
+		},
+		{
+			"match": "\\b(?:(do)|(end)|(if)|(then)|(else)|(for)|(in)|(to)|(by)|(switch)|(typeswitch)|(case)|(default)|(return)|(break)|(on)|(as)|(invoke)|(event))\\b",
+			"captures": {
+				"1": { "name": "keyword.control.do.ky" },
+				"2": { "name": "keyword.control.end.ky" },
+				"3": { "name": "keyword.control.if.ky" },
+				"4": { "name": "keyword.control.then.ky" },
+				"5": { "name": "keyword.control.else.ky" },
+				"6": { "name": "keyword.control.for.ky" },
+				"7": { "name": "keyword.control.in.ky" },
+				"8": { "name": "keyword.control.to.ky" },
+				"9": { "name": "keyword.control.by.ky" },
+				"10": { "name": "keyword.control.switch.ky" },
+				"11": { "name": "keyword.control.typeswitch.ky" },
+				"12": { "name": "keyword.control.case.ky" },
+				"13": { "name": "keyword.control.default.ky" },
+				"14": { "name": "keyword.control.return.ky" },
+				"15": { "name": "keyword.control.break.ky" },
+				"16": { "name": "keyword.control.on.ky" },
+				"17": { "name": "keyword.control.as.ky" },
+				"18": { "name": "keyword.control.invoke.ky" },
+				"19": { "name": "keyword.control.event.ky" }
+			}
+		},
+		{
+			"match": "\\b(?:(__int)|(__float)|(__bool)|(__string)|(__list))\\b",
+			"captures": {
+				"1": { "name": "storage.type.int.ky" },
+				"2": { "name": "storage.type.float.ky" },
+				"3": { "name": "storage.type.bool.ky" },
+				"4": { "name": "storage.type.string.ky" },
+				"5": { "name": "storage.type.list.ky" }
+			}
+		},
+		{
+			"match": "\\bnew\\b",
+			"name": "keyword.operator.new"
+		},
+		{
+			"match": "\\b(?:(this))\\.",
+			"captures": {
+				"1": { "name": "variable.language.this.ky" }
+			}
+		},
+		{
+			"match": "\\b([a-zA-Z][a-zA-Z0-9_]*\\??)(\\.|:)",
+			"captures": {
+				"1": { "name": "entity.name.class.ky" }
+			}
+		},
+		{
+			"match": "\\b(?:(true)|(false))\\b",
+			"captures": {
+				"1": { "name": "constant.language.true.ky" },
+				"2": { "name": "constant.language.false.ky" }
+			}
+		},
+		{
+			"match": "\\b(0|[1-9][0-9]*|(0|[1-9][0-9]*)\\.[0-9]+)\\b",
+			"name": "constant.numeric.ky"
+		}
+	],
+	"scopeName": "source.ky"
+}
