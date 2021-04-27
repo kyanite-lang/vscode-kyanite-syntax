@@ -3,6 +3,7 @@
     "displayName": "Kyanite Syntax Highlighting",
     "description": "Adds Kyanite syntax support.",
     "version": "0.0.1",
+    "publisher": "kyanite-lang",
     "engines": {
         "vscode": "^1.55.0"
     },
