@@ -21,6 +21,10 @@
             "language": "ky",
             "scopeName": "source.ky",
             "path": "./syntaxes/ky.tmLanguage.json"
+        }],
+        "snippets": [{
+            "language": "ky",
+            "path": "./snippets.json"
         }]
     }
 }

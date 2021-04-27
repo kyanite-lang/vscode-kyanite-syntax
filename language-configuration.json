@@ -6,10 +6,14 @@
     "brackets": [
         ["{", "}"],
         ["[", "]"],
-        ["(", ")"],
-        ["do", "end"],
-        ["function", "end"],
+        ["(", ")"]
     ],
+    "folding": {
+        "markers": {
+            "start": "\\bdo\\b",
+            "end": "\\bend\\b"
+        }
+    },
     // symbols that are auto closed when typing
     "autoClosingPairs": [
         ["{", "}"],
@@ -26,5 +30,9 @@
         ["do", "end"],
         ["\"", "\""],
         ["'", "'"]
-    ]
+    ],
+    "indentationRules": {
+        "increaseIndentPattern": "(?:\\b(?:do|then|else)\\b|^\\s*function\\b.*?\\s*$)",
+        "decreaseIndentPattern": "end"
+    }
 }

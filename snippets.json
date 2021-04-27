@@ -1,0 +1,62 @@
+{
+    "Define an object": {
+        "prefix": "obj",
+        "body": ["object ${1:Name} { $2 }"],
+        "description": "Defines an object"
+    },
+    "Define an implicit-constructor object": {
+        "prefix": "obj!",
+        "body": ["object ${1:Name} { $2 }!"],
+        "description": "Defines an object with an implicit constructor"
+    },
+    "Anonymous event listener": {
+        "prefix": "ondo",
+        "body": ["on ${1:event.name} as ${2:e} do", "\t$3", "end"],
+        "description": "Registers an anonymous event listener function"
+    },
+    "Event listener": {
+        "prefix": "onfunction",
+        "body": ["on ${1:event.name} call ${2:func}"],
+        "description": "Registers an existing function as an event listener"
+    },
+    "For-each loop": {
+        "prefix": "foreach",
+        "body": ["for ${1:element} in ${2:array} do", "\t$3", "end"],
+        "description": "Creates a for loop to iterate through an array"
+    },
+    "Range loop": {
+        "prefix": "range",
+        "body": ["for i = 0 to ${1:x} do", "\t$2", "end"],
+        "description": "Creates a for loop to go from 0 to a number"
+    },
+    "Check int": {
+        "prefix": "int?",
+        "body": ["if ${1:var} is __int then", "\t$2", "end"],
+        "description": "Creates an if block to check if a variable is an integer"
+    },
+    "Check float": {
+        "prefix": "float?",
+        "body": ["if ${1:var} is __float then", "\t$2", "end"],
+        "description": "Creates an if block to check if a variable is a float"
+    },
+    "Check bool": {
+        "prefix": "bool?",
+        "body": ["if ${1:var} is __bool then", "\t$2", "end"],
+        "description": "Creates an if block to check if a variable is a bool"
+    },
+    "Check string": {
+        "prefix": "string?",
+        "body": ["if ${1:var} is __string then", "\t$2", "end"],
+        "description": "Creates an if block to check if a variable is a string"
+    },
+    "Check list": {
+        "prefix": "list?",
+        "body": ["if ${1:var} is __list then", "\t$2", "end"],
+        "description": "Creates an if block to check if a variable is a list"
+    },
+    "Check object": {
+        "prefix": "obj?",
+        "body": ["if ${1:var} is ${2:Object} then", "\t$3", "end"],
+        "description": "Creates an if block to check if a variable is a certain Object type"
+    }
+}
